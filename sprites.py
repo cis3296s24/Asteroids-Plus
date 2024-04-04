@@ -184,7 +184,7 @@ class Player(pygame.sprite.Sprite):
                 
                 if self.lives <= 0:
                     self.kill()
-                    self.game.playing = False
+                    #self.game.playing = False
                     break
 
     def collide(self, spriteGroup):

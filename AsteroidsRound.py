@@ -63,6 +63,8 @@ class Game:
         for event in pygame.event.get():
             #when you x-out of window, game quits
             if event.type == pygame.QUIT:
+                MUSIC_CHANNEL.stop()
+                SHIP_CHANNEL.stop()
                 self.running = False
                 self.playing = False
 
@@ -184,7 +186,7 @@ class Game:
         MUSIC_CHANNEL.play(BACKGROUND_MUSIC, loops=-1)
 
         # Start the ship music
-        ship_music_playing = False
+        self.ship_music_playing = False
 
         #game loop
         while self.running:
@@ -193,13 +195,14 @@ class Game:
                 self.update()
                 self.draw()
                 # Check if ship music needs to be played
-                if not ship_music_playing and self.ship_exist:
+                if not self.ship_music_playing and self.ship_exist:
                     SHIP_CHANNEL.play(SHIP_MUSIC, loops=-1)
-                    ship_music_playing = True
-                elif ship_music_playing and not self.ship_exist:
+                    self.ship_music_playing = True
+                elif self.ship_music_playing and not self.ship_exist:
                     SHIP_CHANNEL.stop()
-                    ship_music_playing = False
+                    self.ship_music_playing = False
 
         # Stop music before quitting
         MUSIC_CHANNEL.stop()
         SHIP_CHANNEL.stop()
+        self.running = False
