@@ -53,7 +53,8 @@ ASTEROID_MUSIC = pygame.mixer.Sound('Sounds/Asteroid Destroyed.mp3')
 PLAYER_BULLET_MUSIC = pygame.mixer.Sound('Sounds/Player Bullet.mp3')
 SHIP_MUSIC = pygame.mixer.Sound('Sounds/Ship Sounds.mp3')
 PLAYER_DESTROYED_MUSIC = pygame.mixer.Sound('Sounds/Player Destroyed.mp3')
-OBTAIN_POWERUP_MUSIC = pygame.mixer.Sound('Sounds/Obtain Powerup.mp3')
+POWERUP_MUSIC = pygame.mixer.Sound('Sounds/Obtain Powerup.mp3')
+BOMB_MUSIC = pygame.mixer.Sound('Sounds/Explosion.mp3')
         
 # play music on separate channels
 MUSIC_CHANNEL = pygame.mixer.Channel(0)

@@ -4,7 +4,7 @@ from config import *
 from ship import *
 from asteroid import *
 import sys
-from powerups import 
+from powerups import *
 import time
 
 class Game:

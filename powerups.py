@@ -46,10 +46,13 @@ class Powerups(pygame.sprite.Sprite):
         # check if within collision threshold to obtain the powerup
         if distance < collision_threshold:
             if self.image == self.images[0]:
+                POWERUP_CHANNEL.play(POWERUP_MUSIC)
                 self.shield_funct()
             elif self.image == self.images[1]:
+                POWERUP_CHANNEL.play(POWERUP_MUSIC)
                 self.plus_funct()
             elif self.image == self.images[2]:
+                POWERUP_CHANNEL.play(BOMB_MUSIC)
                 self.bomb_funct()
             self.kill()  # Remove the powerup sprite after collision
                 
