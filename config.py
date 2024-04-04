@@ -63,3 +63,6 @@ PLAYER_CHANNEL = pygame.mixer.Channel(2)
 PLAYER_DESTROYED_CHANNEL = pygame.mixer.Channel(3)
 SHIP_CHANNEL = pygame.mixer.Channel(4)
 POWERUP_CHANNEL = pygame.mixer.Channel(5)
+
+# set volume, needs continuous testing
+pygame.mixer.Channel(0).set_volume(2)
