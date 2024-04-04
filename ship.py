@@ -2,7 +2,6 @@
 from math import *
 import pygame
 import random
-from sprites import *
 from config import *
 import sys
 
