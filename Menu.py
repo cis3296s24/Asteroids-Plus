@@ -3,10 +3,14 @@ from AsteroidsRound import *
 from shipSelectScreen import *
 from button import *
 from leaderboard import *
+import pygame.font
 
 class Menu:
     def __init__(self):
         pygame.init()
+
+        self.title_font = pygame.font.Font(None, 64)
+        self.title_text = self.title_font.render("ASTEROIDS+", True, WHITE) 
         # load screen and images for background
         self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         self.background = pygame.image.load('Images/backgrounds/space-backgound.png').convert_alpha()
@@ -33,6 +37,11 @@ class Menu:
         self.screen.blit(self.background, (0,0))
         self.screen.blit(self.bg_stars, (self.bg_stars_x1 ,0))
         self.screen.blit(self.bg_stars, (self.bg_stars_x2 ,0))
+
+
+        # Draw title text
+        title_rect = self.title_text.get_rect(center=(WIN_WIDTH/2, 100))  # Adjust the y-coordinate as needed
+        self.screen.blit(self.title_text, title_rect)
        
         self.clock.tick(FPS) #update the screen based on FPS
         pygame.mouse.set_visible(True)
